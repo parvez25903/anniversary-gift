@@ -1,0 +1,2679 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#081b18">
+<title>আমাদের গল্প ❤️ — শুভ বিবাহবার্ষিকী</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#fbf3e7;
+  --ink:#13211d;
+  --teal:#0a514b;
+  --teal2:#167b71;
+  --gold:#e5a035;
+  --gold2:#f8cf7b;
+  --rose:#e9b9c2;
+  --white:#fffaf3;
+  --glass:rgba(255,250,243,.10);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Hind Siliguri',sans-serif;
+  overflow-x:hidden;
+}
+
+.font-display{
+  font-family:'Noto Serif Bengali',serif;
+}
+
+.font-num{
+  font-family:'Fraunces',serif;
+}
+
+::selection{
+  background:var(--gold2);
+  color:var(--ink);
+}
+
+/* ================= LOADER ================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:100;
+  opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+#loader{
+  position:fixed;
+  inset:0;
+  background:#081b18;
+  z-index:9999;
+  display:grid;
+  place-items:center;
+  transition:opacity .9s,visibility .9s;
+}
+
+#loader.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.loader-heart{
+  font-size:55px;
+  animation:heartbeat 1s infinite;
+}
+
+.loader-ring{
+  width:110px;
+  height:110px;
+  border:1px solid rgba(248,207,123,.3);
+  border-top-color:var(--gold2);
+  border-radius:50%;
+  animation:spin 1.4s linear infinite;
+  display:grid;
+  place-items:center;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes heartbeat{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.18);
+  }
+}
+
+/* ================= PROGRESS ================= */
+
+#progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  width:0;
+  z-index:500;
+  background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--gold2),
+    var(--rose)
+  );
+  box-shadow:0 0 15px var(--gold2);
+}
+
+/* ================= BACKGROUND EFFECT ================= */
+
+#stars,
+.petals,
+.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:4;
+  overflow:hidden;
+}
+
+.star{
+  position:absolute;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:var(--gold2);
+  animation:twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle{
+  0%,100%{
+    opacity:.15;
+    transform:scale(.6);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.5);
+  }
+}
+
+.petal{
+  position:absolute;
+  top:-8%;
+  width:10px;
+  height:14px;
+  border-radius:70% 0 70% 70%;
+  background:linear-gradient(
+    135deg,
+    var(--gold2),
+    var(--gold)
+  );
+  opacity:.7;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  from{
+    transform:translate3d(0,-10vh,0) rotate(0);
+    opacity:0;
+  }
+
+  12%{
+    opacity:.75;
+  }
+
+  to{
+    transform:
+      translate3d(var(--drift),115vh,0)
+      rotate(420deg);
+    opacity:0;
+  }
+}
+
+.float-heart{
+  position:absolute;
+  color:var(--rose);
+  font-size:18px;
+  opacity:0;
+  animation:floatHeart 7s ease-in infinite;
+}
+
+@keyframes floatHeart{
+
+  0%{
+    transform:translateY(110vh) scale(.5);
+    opacity:0;
+  }
+
+  15%{
+    opacity:.45;
+  }
+
+  85%{
+    opacity:.35;
+  }
+
+  100%{
+    transform:translateY(-15vh) scale(1.3);
+    opacity:0;
+  }
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:100svh;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(229,160,53,.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(233,185,194,.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #0a514b,
+      #071d1a 72%
+    );
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+
+  background:
+    linear-gradient(
+      rgba(7,29,26,.2),
+      rgba(7,29,26,.72)
+    ),
+    url("images/1.jpg") center/cover no-repeat;
+
+  opacity:.32;
+  filter:saturate(.85);
+}
+
+.orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(1px);
+  opacity:.22;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--gold2),
+      transparent 65%
+    );
+
+  animation:orb 9s ease-in-out infinite;
+}
+
+.orb.one{
+  width:330px;
+  height:330px;
+  left:-130px;
+  top:18%;
+}
+
+.orb.two{
+  width:270px;
+  height:270px;
+  right:-100px;
+  bottom:15%;
+  animation-delay:-3s;
+}
+
+@keyframes orb{
+  50%{
+    transform:
+      translate(30px,-35px)
+      scale(1.1);
+  }
+}
+
+/* ================= NAV ================= */
+
+.nav{
+  position:absolute;
+  top:22px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:min(1080px,92%);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  z-index:20;
+
+  padding:12px 16px;
+
+  border:1px solid rgba(248,207,123,.18);
+
+  background:rgba(8,27,24,.38);
+
+  backdrop-filter:blur(14px);
+
+  border-radius:999px;
+}
+
+.nav a{
+  color:rgba(255,250,243,.8);
+  text-decoration:none;
+  font-size:13px;
+  margin:0 8px;
+}
+
+.nav a:hover{
+  color:var(--gold2);
+}
+
+.brand{
+  font-family:'Fraunces',serif;
+  color:var(--gold2);
+  font-size:18px;
+}
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content{
+  position:relative;
+  z-index:10;
+
+  min-height:100svh;
+
+  display:grid;
+  place-items:center;
+
+  text-align:center;
+
+  padding:110px 20px 60px;
+}
+
+.kicker{
+  letter-spacing:.35em;
+  color:var(--gold2);
+  font-size:12px;
+}
+
+.hero h1{
+  font-size:clamp(45px,8vw,92px);
+  line-height:1.08;
+  color:var(--white);
+  text-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+
+.hero h1 span{
+  color:var(--gold2);
+  position:relative;
+}
+
+.hero h1 span:after{
+  content:"";
+  position:absolute;
+  left:5%;
+  right:5%;
+  bottom:-8px;
+  height:2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold2),
+      transparent
+    );
+}
+
+.subtitle{
+  max-width:720px;
+  color:rgba(255,250,243,.78);
+  font-size:clamp(16px,2.2vw,21px);
+}
+
+/* ================= HERO PHOTO ================= */
+
+.hero-photo{
+  width:min(250px,62vw);
+  aspect-ratio:1;
+  border-radius:50%;
+  padding:7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold2),
+      var(--rose),
+      var(--gold)
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.2),
+    0 25px 80px rgba(0,0,0,.35);
+
+  animation:photoFloat 5s ease-in-out infinite;
+}
+
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  display:block;
+}
+
+@keyframes photoFloat{
+  50%{
+    transform:translateY(-10px) rotate(1deg);
+  }
+}
+
+/* ================= COUNTER ================= */
+
+.counter{
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:25px;
+
+  width:min(680px,94vw);
+
+  margin:35px auto 0;
+
+  padding:12px;
+
+  border:1px solid rgba(248,207,123,.25);
+
+  border-radius:24px;
+
+  background:rgba(255,250,243,.07);
+
+  backdrop-filter:blur(12px);
+
+  text-align:center;
+}
+
+.counter .unit{
+  padding:12px 5px;
+
+  border-radius:17px;
+
+  text-align:center;
+
+  min-width:100px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.counter .unit:hover{
+  background:rgba(255,255,255,.07);
+}
+
+.num{
+  font-family:'Fraunces',serif;
+  font-size:clamp(30px,6vw,52px);
+  color:var(--gold2);
+  line-height:1;
+}
+
+.label{
+  font-size:10px;
+  letter-spacing:.18em;
+  color:rgba(255,250,243,.62);
+  margin-top:7px;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+  padding:110px 20px;
+}
+
+.section-head{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 60px;
+}
+
+.eyebrow{
+  color:var(--gold);
+  letter-spacing:.28em;
+  font-size:11px;
+}
+
+.section-title{
+  font-size:clamp(35px,5vw,58px);
+  margin:8px 0;
+}
+
+.section-desc{
+  color:rgba(19,33,29,.68);
+  font-size:17px;
+}
+
+/* ================= STORY ================= */
+
+.story{
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(229,160,53,.10),
+      transparent 25%
+    ),
+    var(--bg);
+}
+
+.story-long{
+  position:relative;
+}
+
+.story-long:before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:2px;
+
+  transform:translateX(-50%);
+
+  background:
+    linear-gradient(
+      transparent,
+      #f8cf7b,
+      #167b71,
+      #f8cf7b,
+      transparent
+    );
+
+  opacity:.45;
+}
+
+.memory-block{
+  position:relative;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:55px;
+
+  align-items:center;
+
+  margin-bottom:75px;
+}
+
+.memory-block:before{
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  width:14px;
+  height:14px;
+
+  transform:translate(-50%,-50%);
+
+  border-radius:50%;
+
+  background:#f8cf7b;
+
+  box-shadow:
+    0 0 0 7px rgba(229,160,53,.14),
+    0 0 35px rgba(229,160,53,.7);
+
+  z-index:3;
+}
+
+.memory-text{
+  padding:32px;
+
+  border-radius:28px;
+
+  background:rgba(255,255,255,.74);
+
+  border:1px solid rgba(10,81,75,.1);
+
+  box-shadow:
+    0 20px 50px rgba(19,33,29,.08);
+
+  transition:.55s;
+
+  position:relative;
+}
+
+.memory-text:hover{
+  transform:translateY(-8px) scale(1.015);
+
+  box-shadow:
+    0 30px 65px rgba(19,33,29,.15);
+}
+
+.memory-text h3{
+  font-size:clamp(23px,3vw,32px);
+  margin:0 0 10px;
+}
+
+.memory-text p{
+  font-size:17px;
+  line-height:2;
+  color:rgba(19,33,29,.72);
+}
+
+.memory-number{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:42px;
+  height:42px;
+
+  border-radius:50%;
+
+  background:#0a514b;
+
+  color:#f8cf7b;
+
+  font-family:'Fraunces',serif;
+
+  font-size:14px;
+
+  margin-bottom:13px;
+}
+
+.memory-image{
+  height:390px;
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  padding:8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8cf7b,
+      #e9b9c2,
+      #167b71
+    );
+
+  box-shadow:
+    0 25px 65px rgba(19,33,29,.18);
+
+  transition:.7s;
+}
+
+.memory-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  border-radius:23px;
+
+  display:block;
+
+  transition:1s;
+}
+
+.memory-image:hover{
+  transform:rotate(2deg) scale(1.025);
+}
+
+.memory-image:hover img{
+  transform:scale(1.08);
+}
+
+.final-promise{
+  padding:45px;
+
+  border-radius:38px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffdf8,
+      #e8f2ef
+    );
+
+  border:1px solid rgba(229,160,53,.24);
+
+  box-shadow:
+    0 30px 80px rgba(19,33,29,.12);
+
+  overflow:hidden;
+}
+
+.memory-image.large{
+  height:430px;
+  max-width:720px;
+  margin:0 auto 30px;
+}
+
+.final-text{
+  text-align:center;
+  max-width:850px;
+  margin:auto;
+}
+
+.final-text p{
+  font-size:18px;
+  line-height:2;
+  color:rgba(19,33,29,.72);
+}
+
+.final-text .signature{
+  color:#0a514b;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:25px;
+  margin-top:22px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+  background:
+    linear-gradient(
+      180deg,
+      #e7f1ef,
+      #dfecea
+    );
+}
+
+.gallery-grid{
+  max-width:1100px;
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:repeat(12,1fr);
+
+  gap:22px;
+}
+
+.photo-card{
+  position:relative;
+
+  background:#fff;
+
+  padding:10px 10px 36px;
+
+  border-radius:4px;
+
+  box-shadow:
+    0 20px 45px rgba(19,33,29,.16);
+
+  overflow:hidden;
+
+  transition:
+    transform .6s cubic-bezier(.2,.8,.2,1),
+    box-shadow .6s;
+}
+
+.photo-card:hover{
+  transform:
+    translateY(-12px)
+    rotate(0)!important;
+
+  box-shadow:
+    0 35px 70px rgba(19,33,29,.24);
+}
+
+.photo-card img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  filter:saturate(.95);
+}
+
+.gallery-10 .photo-card{
+  height:330px;
+}
+
+.gallery-10 .photo-card:nth-child(1),
+.gallery-10 .photo-card:nth-child(4),
+.gallery-10 .photo-card:nth-child(8){
+  grid-column:span 7;
+}
+
+.gallery-10 .photo-card:nth-child(2),
+.gallery-10 .photo-card:nth-child(3),
+.gallery-10 .photo-card:nth-child(5),
+.gallery-10 .photo-card:nth-child(6),
+.gallery-10 .photo-card:nth-child(7),
+.gallery-10 .photo-card:nth-child(9){
+  grid-column:span 5;
+}
+
+.gallery-10 .photo-card:nth-child(10){
+  grid-column:span 12;
+  height:460px;
+}
+
+.gallery-10 .photo-card span{
+  position:absolute;
+  right:14px;
+  bottom:6px;
+
+  font-family:'Fraunces',serif;
+
+  font-size:16px;
+
+  color:#a35f68;
+}
+
+.photo-card:nth-child(1){
+  transform:rotate(-2deg);
+}
+
+.photo-card:nth-child(2){
+  transform:rotate(2.5deg);
+}
+
+.photo-card:nth-child(3){
+  transform:rotate(-1.5deg);
+}
+
+.photo-card:nth-child(4){
+  transform:rotate(2deg);
+}
+
+.photo-card:after{
+  content:"♥";
+
+  position:absolute;
+
+  right:17px;
+  bottom:6px;
+
+  color:#b46b73;
+
+  font-size:18px;
+}
+
+/* ================= LETTER ================= */
+
+.letter{
+  background:
+    linear-gradient(
+      135deg,
+      #0a514b,
+      #071d1a
+    );
+
+  color:var(--white);
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.letter:before{
+  content:"";
+
+  position:absolute;
+
+  width:550px;
+  height:550px;
+
+  border-radius:50%;
+
+  right:-260px;
+  top:-230px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(248,207,123,.15),
+      transparent 68%
+    );
+}
+
+.letter-box{
+  max-width:850px;
+
+  margin:auto;
+
+  padding:clamp(28px,6vw,65px);
+
+  border:1px solid rgba(248,207,123,.22);
+
+  border-radius:35px;
+
+  background:rgba(255,250,243,.055);
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.18);
+}
+
+.letter-text{
+  font-size:clamp(19px,2.4vw,26px);
+
+  line-height:2.05;
+
+  color:rgba(255,250,243,.9);
+}
+
+.signature{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  color:var(--gold2);
+  font-size:27px;
+}
+
+/* ================= PROMISE ================= */
+
+.promise-grid{
+  max-width:1000px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:20px;
+}
+
+.promise{
+  padding:32px 24px;
+
+  border-radius:26px;
+
+  background:#fff;
+
+  border:1px solid rgba(10,81,75,.08);
+
+  text-align:center;
+
+  transition:.45s;
+
+  box-shadow:
+    0 12px 35px rgba(19,33,29,.06);
+}
+
+.promise:hover{
+  transform:
+    translateY(-8px)
+    scale(1.01);
+}
+
+.promise .icon{
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+/* ================= NEXT ================= */
+
+.next{
+  background:var(--bg);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.next-count{
+  font-family:'Fraunces',serif;
+  color:var(--teal);
+  font-size:clamp(28px,5vw,50px);
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+  background:#071713;
+  color:var(--white);
+  text-align:center;
+  padding:55px 20px;
+}
+
+.footer-heart{
+  font-size:34px;
+  display:inline-block;
+  animation:heartbeat 1.8s infinite;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  padding:13px 20px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(248,207,123,.35);
+
+  color:var(--white);
+
+  background:rgba(255,255,255,.06);
+
+  cursor:pointer;
+
+  transition:.3s;
+
+  font-family:inherit;
+
+  position:relative;
+
+  z-index:50;
+}
+
+.btn:hover{
+  background:rgba(248,207,123,.12);
+  transform:translateY(-2px);
+}
+
+.btn:active{
+  transform:scale(.95);
+}
+
+/* ================= REVEAL ================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .9s,transform .9s;
+}
+
+.reveal.in{
+  opacity:1;
+  transform:none;
+}
+
+.reveal-left{
+  opacity:0;
+  transform:translateX(-45px);
+  transition:.9s;
+}
+
+.reveal-left.in{
+  opacity:1;
+  transform:none;
+}
+
+.reveal-right{
+  opacity:0;
+  transform:translateX(45px);
+  transition:.9s;
+}
+
+.reveal-right.in{
+  opacity:1;
+  transform:none;
+}
+
+/* ================= TOAST ================= */
+
+#toast{
+  position:fixed;
+
+  left:50%;
+  bottom:28px;
+
+  transform:translate(-50%,30px);
+
+  opacity:0;
+
+  pointer-events:none;
+
+  z-index:900;
+
+  background:#071713;
+
+  color:#fff;
+
+  padding:13px 18px;
+
+  border:1px solid rgba(248,207,123,.3);
+
+  border-radius:999px;
+
+  transition:.4s;
+
+  white-space:nowrap;
+}
+
+#toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti{
+  position:fixed;
+
+  z-index:1000;
+
+  top:50%;
+  left:50%;
+
+  width:9px;
+  height:14px;
+
+  pointer-events:none;
+
+  animation:
+    confetti 1.8s ease-out forwards;
+}
+
+@keyframes confetti{
+
+  from{
+    transform:
+      translate(0,0)
+      rotate(0);
+
+    opacity:1;
+  }
+
+  to{
+    transform:
+      translate(var(--x),var(--y))
+      rotate(var(--r));
+
+    opacity:0;
+  }
+
+}
+
+/* ================= SHIMMER ================= */
+
+@keyframes shimmer{
+
+  0%{
+    transform:
+      translateX(-120%)
+      skewX(-18deg);
+  }
+
+  100%{
+    transform:
+      translateX(220%)
+      skewX(-18deg);
+  }
+
+}
+
+.hero:before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  bottom:0;
+
+  left:-30%;
+
+  width:25%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.08),
+      transparent
+    );
+
+  z-index:8;
+
+  animation:
+    shimmer 7s ease-in-out infinite;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+  .nav .links{
+    display:none;
+  }
+
+  .nav{
+    padding:9px 11px;
+  }
+
+  .brand{
+    font-size:15px;
+  }
+
+  .nav .btn{
+    padding:10px 15px;
+    font-size:12px;
+  }
+
+  /* Counter */
+
+  .counter{
+    width:95%;
+    gap:3px;
+    padding:7px;
+
+    justify-content:center;
+  }
+
+  .counter .unit{
+    flex:1;
+    min-width:0;
+    padding:10px 2px;
+  }
+
+  .num{
+    font-size:clamp(28px,8vw,42px);
+  }
+
+  .label{
+    font-size:9px;
+    letter-spacing:.1em;
+  }
+
+  /* Story */
+
+  .story-long:before{
+    display:none;
+  }
+
+  .memory-block,
+  .memory-block.reverse{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:38px;
+  }
+
+  .memory-block:before{
+    display:none;
+  }
+
+  .memory-text{
+    padding:24px;
+  }
+
+  .memory-image,
+  .memory-image.large{
+    width:100%;
+    height:300px;
+  }
+
+  /* Gallery */
+
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+
+  .gallery-10 .photo-card{
+    grid-column:span 1!important;
+    height:250px!important;
+  }
+
+  .gallery-10 .photo-card:nth-child(1),
+  .gallery-10 .photo-card:nth-child(10){
+    grid-column:span 2!important;
+    height:330px!important;
+  }
+
+  /* Promise */
+
+  .promise-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Final */
+
+  .final-promise{
+    padding:22px;
+  }
+
+  #toast{
+    font-size:13px;
+    max-width:90%;
+    text-align:center;
+  }
+
+}
+
+/* ================= REDUCED MOTION ================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *:before,
+  *:after{
+    animation-duration:.001ms!important;
+    transition-duration:.001ms!important;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div id="loader">
+  <div class="loader-ring">
+    <div class="loader-heart">❤️</div>
+  </div>
+</div>
+
+<div id="progress"></div>
+
+<div id="stars"></div>
+<div class="petals" id="petals"></div>
+<div class="hearts" id="hearts"></div>
+
+<div id="toast">
+  ❤️ তোমাদের ভালোবাসা চিরদিন এমনই থাকুক
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
+  <nav class="nav">
+
+    <div class="brand">
+      Our Story ♥
+    </div>
+
+    <div class="links">
+      <a href="#story">গল্প</a>
+      <a href="#gallery">মুহূর্ত</a>
+      <a href="#letter">চিঠি</a>
+      <a href="#promise">প্রতিশ্রুতি</a>
+    </div>
+
+    <button class="btn" id="loveBtn" type="button">
+      ♥ Surprise
+    </button>
+
+  </nav>
+
+
+  <div class="hero-content">
+
+    <div>
+
+      <div class="hero-photo mx-auto mb-7 reveal">
+
+        <img
+          src="images/6.jpg"
+          alt="আমাদের প্রিয় মুহূর্ত"
+        >
+
+      </div>
+
+
+      <p class="kicker reveal font-display mb-4">
+        শুভ বিবাহবার্ষিকী
+      </p>
+
+
+      <h1 class="font-display reveal">
+        আমাদের <span>দুই</span> বছর
+      </h1>
+
+
+      <p class="subtitle font-display reveal mx-auto mt-6">
+        ১৯ আগস্ট ২০২৪ — যে দিন থেকে “আমি” আর “তুমি” মিলে “আমরা”।
+      </p>
+
+
+      <!-- COUNTER -->
+
+      <div class="counter reveal">
+
+        <div class="unit">
+
+          <div id="years" class="num">
+            0
+          </div>
+
+          <div class="label">
+            বছর
+          </div>
+
+        </div>
+
+
+        <div class="unit">
+
+          <div id="months" class="num">
+            0
+          </div>
+
+          <div class="label">
+            মাস
+          </div>
+
+        </div>
+
+
+        <div class="unit">
+
+          <div id="days" class="num">
+            0
+          </div>
+
+          <div class="label">
+            দিন
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <p class="text-white/55 text-sm mt-4 reveal">
+        প্রতিটি মুহূর্ত এখনো গোনা হচ্ছে…
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= STORY ================= -->
+
+<section class="section story" id="story">
+
+  <div class="section-head reveal">
+
+    <p class="eyebrow">
+      আমাদের পথচলা
+    </p>
+
+    <h2 class="section-title font-display">
+      দুই বছরের গল্প
+    </h2>
+
+    <p class="section-desc">
+      ভালোবাসা, ভ্রমণ, অভিমান আর হাজারো স্মৃতিতে লেখা আমাদের পথচলা।
+    </p>
+
+  </div>
+
+
+  <div class="story-long max-w-5xl mx-auto">
+
+
+    <div class="memory-block reveal-left">
+
+      <div class="memory-text">
+
+        <span class="memory-number">
+          01
+        </span>
+
+        <h3 class="font-display">
+          শুরুটা ছিল আমাদের মতোই
+        </h3>
+
+        <p>
+          আমাদের পথচলাটা খুব সাধারণ ছিল না, আবার খুব জাঁকজমকপূর্ণও ছিল না।
+          প্রেম করে হাত ধরেছিলাম, আর তারপর আজকের দিনেই তোমার আমার চার চোখ
+          এক হয়েছিল—সব বাধা পেরিয়ে আমরা এক সুতোয় বাঁধা পড়েছিলাম।
+          দেখতে দেখতে দুটো ভালোবাসার বছর কীভাবে কেটে গেল,
+          সত্যি ভাবলেই আমার অবাক লাগে!
+        </p>
+
+      </div>
+
+
+      <div class="memory-image">
+
+        <img src="images/1.jpg" alt="স্মৃতি ১">
+
+      </div>
+
+    </div>
+
+
+    <div class="memory-block reverse reveal-right">
+
+      <div class="memory-image">
+
+        <img src="images/2.jpg" alt="স্মৃতি ২">
+
+      </div>
+
+
+      <div class="memory-text">
+
+        <span class="memory-number">
+          02
+        </span>
+
+        <h3 class="font-display">
+          প্রথম দিনের সেই স্বপ্ন
+        </h3>
+
+        <p>
+          তোমার কি মনে আছে আমাদের প্রথম দিনগুলোর কথা?
+          প্রেমের সেই রোমাঞ্চকর অনুভূতি আর একসাথে সারাজীবন কাটানোর
+          মিষ্টি স্বপ্নগুলো আজকে কত সুন্দর একটা বাস্তবতায় রূপ নিয়েছে।
+          আজকের দিনে তোমার দিকে তাকালে আমার মনে হয়,
+          পৃথিবীর সব সুন্দর কবিতা বুঝি তোমার হাসির মাঝেই লুকিয়ে আছে।
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="memory-block reveal-left">
+
+      <div class="memory-text">
+
+        <span class="memory-number">
+          03
+        </span>
+
+        <h3 class="font-display">
+          স্মৃতির খাতা
+        </h3>
+
+        <p>
+          এই দুই বছরের স্মৃতির খাতাটা খুললে কত শত সুন্দর মূহুর্ত ভেসে ওঠে।
+          আমরা দুজনে কত জায়গায় ঘুরেছি, বলো?
+          জীবনের ব্যস্ততা ভুলে যখনই সুযোগ পেয়েছি,
+          আমরা বেরিয়ে পড়েছি নতুন কোনো ঠিকানার খোঁজে।
+        </p>
+
+      </div>
+
+
+      <div class="memory-image">
+
+        <img src="images/3.jpg" alt="স্মৃতি ৩">
+
+      </div>
+
+    </div>
+
+
+    <div class="memory-block reverse reveal-right">
+
+      <div class="memory-image">
+
+        <img src="images/4.jpg" alt="স্মৃতি ৪">
+
+      </div>
+
+
+      <div class="memory-text">
+
+        <span class="memory-number">
+          04
+        </span>
+
+        <h3 class="font-display">
+          সোনা মসজিদের নীরবতা
+        </h3>
+
+        <p>
+          সোনা মসজিদের ওই প্রাচীন শান্ত চত্বরে যখন আমরা দাঁড়িয়েছিলাম,
+          মনে হয়েছিল সময় বুঝি থমকে গেছে।
+          ইতিহাস আর স্থাপত্যের মাঝে তোমার হাতটি ধরে রাখা
+          সেই মুহূর্তটা আজও আমার হৃদয়ে বড্ড জীবন্ত হয়ে আছে।
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="memory-block reveal-left">
+
+      <div class="memory-text">
+
+        <span class="memory-number">
+          05
+        </span>
+
+        <h3 class="font-display">
+          পাহাড়পুরের মাটির ঘ্রাণ
+        </h3>
+
+        <p>
+          পাহাড়পুরের ঐতিহাসিক মাটির ঘ্রাণ আর নির্জনতা আমাদের খুব কাছে
+          টেনে এনেছিল। রোদের আলোয় তোমার মুখের অমলিন হাসিটা দেখে
+          আমি বারবার নতুন করে তোমার প্রেমে পড়েছিলাম।
+        </p>
+
+      </div>
+
+
+      <div class="memory-image">
+
+        <img src="images/5.jpg" alt="স্মৃতি ৫">
+
+      </div>
+
+    </div>
+
+
+    <div class="memory-block reverse reveal-right">
+
+      <div class="memory-image">
+
+        <img src="images/6.jpg" alt="স্মৃতি ৬">
+
+      </div>
+
+
+      <div class="memory-text">
+
+        <span class="memory-number">
+          06
+        </span>
+
+        <h3 class="font-display">
+          শহরের ভিড়েও তুমি
+        </h3>
+
+        <p>
+          ঢাকার ব্যস্ত কোলাহল ভেঙে একে অপরের হাত ধরে হেঁটে যাওয়া,
+          কিংবা শহরের কোনো এক কোণে বসে একসাথে চা খাওয়ার সাধারণ
+          মুহূর্তগুলোও তোমার উপস্থিতিতে অসাধারণ হয়ে উঠেছিল।
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="memory-block reveal-left">
+
+      <div class="memory-text">
+
+        <span class="memory-number">
+          07
+        </span>
+
+        <h3 class="font-display">
+          রাজশাহীর শান্ত বিকেল
+        </h3>
+
+        <p>
+          আর রাজশাহী শহরের কথা তো ভুলেই যাওয়া যাবে না।
+          শহরের শান্ত বিকেল আর পদ্মাপাড়ের সেই হু হু হাওয়া—
+          যেখানে তোমার খোলা চুল উড়ছিল আর আমি শুধু তোমার দিকে তাকিয়ে
+          ভাবছিলাম, জীবনের সবচেয়ে সুন্দর সিদ্ধান্তটাই আমি নিয়েছিলাম।
+          পদ্মার ঢেউয়ের মতোই আমাদের ভালোবাসাও যেন আজ বয়ে চলেছে।
+        </p>
+
+      </div>
+
+
+      <div class="memory-image">
+
+        <img src="images/7.jpg" alt="স্মৃতি ৭">
+
+      </div>
+
+    </div>
+
+
+    <div class="memory-block reverse reveal-right">
+
+      <div class="memory-image">
+
+        <img src="images/8.jpg" alt="স্মৃতি ৮">
+
+      </div>
+
+
+      <div class="memory-text">
+
+        <span class="memory-number">
+          08
+        </span>
+
+        <h3 class="font-display">
+          সব পথ সবসময় সহজ ছিল না
+        </h3>
+
+        <p>
+          তবে আমাদের এই পথচলাটা যে শুধু গোলাপ বিছানো ছিল,
+          তা কিন্তু নয়। এই দুটো বছর কি আমাদের কম পরীক্ষা নিয়েছে?
+          জীবনে কত হাজারো বাধা এসেছে, কত দিন অযথা মনমালিন্য হয়েছে,
+          মান-অভিমান আর না-বলা অভিযোগে কত রাত আমরা চুপচাপ কাটিয়েছি!
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="memory-block reveal-left">
+
+      <div class="memory-text">
+
+        <span class="memory-number">
+          09
+        </span>
+
+        <h3 class="font-display">
+          ঝড়ের পর আবার হাত ধরা
+        </h3>
+
+        <p>
+          মাঝে মাঝে মনে হতো চারপাশের পরিস্থিতি বুঝি খুব কঠিন হয়ে যাচ্ছে,
+          আমাদের ওপর চেপে বসছিল হাজারো দায়িত্ব আর জটিলতা।
+          কিন্তু ঝড়ের শেষে প্রতিবারই আমরা নতুন করে একে অপরের হাত
+          ধরে ঘুরে দাঁড়িয়েছি।
+          ঝগড়া আর অনুযোগের আড়ালে লুকিয়ে থাকা আসল সত্যটা হলো—
+          আমরা একে অপরকে ছেড়ে থাকতে পারি না।
+        </p>
+
+      </div>
+
+
+      <div class="memory-image">
+
+        <img src="images/9.jpg" alt="স্মৃতি ৯">
+
+      </div>
+
+    </div>
+
+
+    <!-- FINAL PROMISE -->
+
+    <div class="final-promise reveal">
+
+      <div class="memory-image large">
+
+        <img src="images/10.jpg" alt="শেষ স্মৃতি">
+
+      </div>
+
+
+      <div class="final-text">
+
+        <span class="memory-number">
+          10
+        </span>
+
+        <h3 class="font-display">
+          সামনের পুরো পৃথিবীটা একসাথে
+        </h3>
+
+        <p>
+          আজ আমাদের দ্বিতীয় বিবাহবার্ষিকীতে তোমার কাছে একটাই প্রতিশ্রুতি
+          দিতে চাই। সামনে তো এখনও অনেক পথ বাকি, ইনশাআল্লাহ পুরো পৃথিবীটা
+          এভাবেই তোমার পাশে থেকে ঘুরে দেখব।
+          আগামী দিনগুলোতে যত ঝড়ঝাপটাই আসুক না কেন,
+          আমার হাতটা সবসময় তোমার হাতের ওপরই থাকবে।
+          আমরা একসাথে হাসব, একসাথে জীবনের সব জটিলতা পার করব,
+          আর শেষ দিন পর্যন্ত এভাবেই সারাজীবন একসাথে পথ চলব—
+          এই আমার শেষ কথা।
+        </p>
+
+        <p class="signature">
+          শুভ বিবাহবার্ষিকী, আমার জীবনের সবচেয়ে সুন্দর উপহার! ❤️
+          <br>
+          <i>I LOVE YOU</i>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="section gallery" id="gallery">
+
+  <div class="section-head reveal">
+
+    <p class="eyebrow">
+      অ্যালবাম
+    </p>
+
+    <h2 class="section-title font-display">
+      দশটি ফ্রেম, হাজারো স্মৃতি
+    </h2>
+
+    
+
+  </div>
+
+
+  <div class="gallery-grid gallery-10">
+
+    <div class="photo-card reveal">
+      <img src="images/1.jpg" alt="ছবি ১">
+      <span>01</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/2.jpg" alt="ছবি ২">
+      <span>02</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/3.jpg" alt="ছবি ৩">
+      <span>03</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/4.jpg" alt="ছবি ৪">
+      <span>04</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/5.jpg" alt="ছবি ৫">
+      <span>05</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/6.jpg" alt="ছবি ৬">
+      <span>06</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/7.jpg" alt="ছবি ৭">
+      <span>07</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/8.jpg" alt="ছবি ৮">
+      <span>08</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/9.jpg" alt="ছবি ৯">
+      <span>09</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/10.jpg" alt="ছবি ১০">
+      <span>10</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/11.jpg" alt="ছবি ১১">
+      <span>11</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/12.jpg" alt="ছবি ১২">
+      <span>12</span>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="images/13.jpg" alt="ছবি ১৩">
+      <span>13</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= LETTER ================= -->
+
+<section class="section letter" id="letter">
+
+  <div class="letter-box reveal">
+
+    <p class="eyebrow text-center">
+      তোমার জন্য
+    </p>
+
+    <h2 class="font-display text-center text-4xl sm:text-5xl mt-3 mb-10 text-white">
+      একটি ছোট্ট চিঠি
+    </h2>
+
+    <p class="letter-text font-display">
+
+      দুই বছর আগে আমরা একে অপরের হাত ধরেছিলাম।
+      তারপর থেকে কত সকাল, কত রাত, কত হাসি, কত অভিমান—
+      সবকিছু একসাথে পেরিয়ে এসেছি।
+
+      তুমি আমার জীবনের শুধু একজন মানুষ নও;
+      তুমি আমার প্রতিদিনের শান্তির জায়গা।
+
+      সামনে যত বছরই আসুক,
+      আমি চাই প্রতিটি অধ্যায়ে তোমার হাতটা আমার হাতেই থাকুক।
+
+    </p>
+
+    <p class="signature text-right mt-8">
+      ভালোবাসি তোমাকে — আজ, কাল, সবসময়। ❤️
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PROMISE ================= -->
+
+<section class="section" id="promise">
+
+  <div class="section-head reveal">
+
+    <p class="eyebrow">
+      আগামী দিনের জন্য
+    </p>
+
+    <h2 class="section-title font-display">
+      তিনটি প্রতিশ্রুতি
+    </h2>
+
+  </div>
+
+
+  <div class="promise-grid">
+
+    <div class="promise reveal">
+
+      <div class="icon">
+        🤝
+      </div>
+
+      <h3 class="font-display text-xl">
+        সবসময় পাশে
+      </h3>
+
+      <p class="text-black/60 mt-2">
+        ভালো সময়ে যেমন, কঠিন সময়েও ঠিক তেমন।
+      </p>
+
+    </div>
+
+
+    <div class="promise reveal">
+
+      <div class="icon">
+        🌸
+      </div>
+
+      <h3 class="font-display text-xl">
+        ছোট সুখগুলো
+      </h3>
+
+      <p class="text-black/60 mt-2">
+        একসাথে ছোট ছোট আনন্দকে বড় স্মৃতিতে পরিণত করা।
+      </p>
+
+    </div>
+
+
+    <div class="promise reveal">
+
+      <div class="icon">
+        ♾️
+      </div>
+
+      <h3 class="font-display text-xl">
+        সারাজীবন
+      </h3>
+
+      <p class="text-black/60 mt-2">
+        একটা বছর নয়—অনেকগুলো বছর, একসাথে।
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= NEXT ANNIVERSARY ================= -->
+
+<section class="section next">
+
+  <div class="reveal">
+
+    <p class="eyebrow">
+      পরের অধ্যায়
+    </p>
+
+    <h2 class="font-display text-3xl sm:text-5xl mt-3 mb-7">
+      পরবর্তী বিবাহবার্ষিকী পর্যন্ত
+    </h2>
+
+    <div id="next" class="next-count">
+      00 দিন 00 ঘণ্টা 00 মিনিট 00 সেকেন্ড
+    </div>
+
+    <p class="text-black/50 mt-3">
+      আরেকটি সুন্দর বছর, আরেকটি নতুন গল্পের অপেক্ষা।
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+  <div class="footer-heart">
+    ❤️
+  </div>
+
+  <p class="font-display text-lg mt-3">
+    শুভ বিবাহবার্ষিকী — আমাদের দুই বছর
+  </p>
+
+  <p class="text-white/40 text-sm mt-2">
+    Made with love • 19 August 2024
+  </p>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   WEDDING DATE
+===================================================== */
+
+const wedding = new Date(
+  2024,
+  7,
+  19,
+  0,
+  0,
+  0
+);
+
+
+/* =====================================================
+   ELAPSED TIME
+===================================================== */
+
+function elapsed(){
+
+  const now = new Date();
+
+  let years =
+    now.getFullYear() -
+    wedding.getFullYear();
+
+  let months =
+    now.getMonth() -
+    wedding.getMonth();
+
+  let days =
+    now.getDate() -
+    wedding.getDate();
+
+
+  /*
+   * Day negative হলে আগের মাসের দিন যোগ হবে
+   */
+
+  if(days < 0){
+
+    const previousMonth =
+      new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        0
+      );
+
+    days += previousMonth.getDate();
+
+    months--;
+
+  }
+
+
+  /*
+   * Month negative হলে year কমবে
+   */
+
+  if(months < 0){
+
+    months += 12;
+
+    years--;
+
+  }
+
+
+  /*
+   * Counter update
+   */
+
+  document.getElementById("years").textContent =
+    years;
+
+  document.getElementById("months").textContent =
+    months;
+
+  document.getElementById("days").textContent =
+    days;
+
+}
+
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+window.addEventListener(
+  "load",
+  () => {
+
+    setTimeout(
+      () => {
+
+        const loader =
+          document.getElementById("loader");
+
+        if(loader){
+          loader.classList.add("hide");
+        }
+
+      },
+      700
+    );
+
+  }
+);
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const io =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(
+        entry => {
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add("in");
+
+            io.unobserve(entry.target);
+
+          }
+
+        }
+      );
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+
+document
+  .querySelectorAll(
+    ".reveal,.reveal-left,.reveal-right"
+  )
+  .forEach(
+    element => io.observe(element)
+  );
+
+
+/* =====================================================
+   NEXT ANNIVERSARY
+===================================================== */
+
+function nextAnniv(){
+
+  const now = new Date();
+
+  let target =
+    new Date(
+      now.getFullYear(),
+      7,
+      19,
+      0,
+      0,
+      0
+    );
+
+
+  /*
+   * এই বছরের anniversary পার হয়ে গেলে
+   * next year
+   */
+
+  if(now >= target){
+
+    target =
+      new Date(
+        now.getFullYear() + 1,
+        7,
+        19,
+        0,
+        0,
+        0
+      );
+
+  }
+
+
+  const diff =
+    target - now;
+
+
+  const dd =
+    Math.floor(
+      diff / 86400000
+    );
+
+  const hh =
+    Math.floor(
+      (diff % 86400000) /
+      3600000
+    );
+
+  const mm =
+    Math.floor(
+      (diff % 3600000) /
+      60000
+    );
+
+  const ss =
+    Math.floor(
+      (diff % 60000) /
+      1000
+    );
+
+
+  const nextElement =
+    document.getElementById("next");
+
+
+  if(nextElement){
+
+    nextElement.textContent =
+      `${dd} দিন ${hh} ঘণ্টা ${mm} মিনিট ${ss} সেকেন্ড`;
+
+  }
+
+}
+
+
+/* =====================================================
+   INITIAL COUNTERS
+===================================================== */
+
+elapsed();
+
+setInterval(
+  elapsed,
+  1000
+);
+
+
+nextAnniv();
+
+setInterval(
+  nextAnniv,
+  1000
+);
+
+
+/* =====================================================
+   SCROLL PROGRESS
+===================================================== */
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    const total =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+
+    if(total <= 0){
+      return;
+    }
+
+
+    const percentage =
+      (window.scrollY / total) * 100;
+
+
+    document.getElementById(
+      "progress"
+    ).style.width =
+      percentage + "%";
+
+  }
+);
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+function createStars(){
+
+  const box =
+    document.getElementById("stars");
+
+
+  for(
+    let i = 0;
+    i < 55;
+    i++
+  ){
+
+    const star =
+      document.createElement("i");
+
+
+    star.className =
+      "star";
+
+
+    star.style.left =
+      Math.random() * 100 + "vw";
+
+
+    star.style.top =
+      Math.random() * 100 + "vh";
+
+
+    star.style.animationDelay =
+      Math.random() * 4 + "s";
+
+
+    box.appendChild(star);
+
+  }
+
+}
+
+
+/* =====================================================
+   PETALS
+===================================================== */
+
+function createPetals(){
+
+  const box =
+    document.getElementById("petals");
+
+
+  const amount =
+    window.innerWidth < 700
+      ? 12
+      : 24;
+
+
+  for(
+    let i = 0;
+    i < amount;
+    i++
+  ){
+
+    const petal =
+      document.createElement("i");
+
+
+    petal.className =
+      "petal";
+
+
+    petal.style.left =
+      Math.random() * 100 + "vw";
+
+
+    petal.style.setProperty(
+      "--drift",
+      (Math.random() * 140 - 70) + "px"
+    );
+
+
+    petal.style.animationDuration =
+      (8 + Math.random() * 8) + "s";
+
+
+    petal.style.animationDelay =
+      Math.random() * 10 + "s";
+
+
+    box.appendChild(petal);
+
+  }
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+function createHearts(){
+
+  const box =
+    document.getElementById("hearts");
+
+
+  for(
+    let i = 0;
+    i < 9;
+    i++
+  ){
+
+    const heart =
+      document.createElement("span");
+
+
+    heart.className =
+      "float-heart";
+
+
+    heart.textContent =
+      "♥";
+
+
+    heart.style.left =
+      Math.random() * 100 + "vw";
+
+
+    heart.style.animationDelay =
+      Math.random() * 8 + "s";
+
+
+    heart.style.animationDuration =
+      (7 + Math.random() * 6) + "s";
+
+
+    box.appendChild(heart);
+
+  }
+
+}
+
+
+createStars();
+createPetals();
+createHearts();
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+function confettiBurst(){
+
+  const chars = [
+    "♥",
+    "✦",
+    "✧",
+    "❤",
+    "✿"
+  ];
+
+
+  for(
+    let i = 0;
+    i < 55;
+    i++
+  ){
+
+    const c =
+      document.createElement("div");
+
+
+    c.className =
+      "confetti";
+
+
+    c.textContent =
+      chars[
+        Math.floor(
+          Math.random() *
+          chars.length
+        )
+      ];
+
+
+    c.style.left =
+      "50%";
+
+
+    c.style.top =
+      "55%";
+
+
+    c.style.color =
+      Math.random() > .5
+        ? "#f8cf7b"
+        : "#e9b9c2";
+
+
+    const angle =
+      Math.random() *
+      Math.PI *
+      2;
+
+
+    const radius =
+      180 +
+      Math.random() *
+      420;
+
+
+    c.style.setProperty(
+      "--x",
+      Math.cos(angle) * radius + "px"
+    );
+
+
+    c.style.setProperty(
+      "--y",
+      Math.sin(angle) * radius + "px"
+    );
+
+
+    c.style.setProperty(
+      "--r",
+      (Math.random() * 720 - 360) + "deg"
+    );
+
+
+    document.body.appendChild(c);
+
+
+    setTimeout(
+      () => c.remove(),
+      1900
+    );
+
+  }
+
+
+  /* Toast */
+
+  const toast =
+    document.getElementById("toast");
+
+
+  toast.classList.add("show");
+
+
+  setTimeout(
+    () => {
+
+      toast.classList.remove("show");
+
+    },
+    2600
+  );
+
+}
+
+
+/* =====================================================
+   LOVE BUTTON
+===================================================== */
+
+const loveBtn =
+  document.getElementById("loveBtn");
+
+
+if(loveBtn){
+
+  loveBtn.addEventListener(
+    "click",
+    confettiBurst
+  );
+
+}
+
+
+/* =====================================================
+   EXTRA: DOUBLE CLICK / TOUCH LOVE EFFECT
+===================================================== */
+
+document.addEventListener(
+  "dblclick",
+  event => {
+
+    /*
+     * Button ছাড়া screen-এ double click করলেও
+     * ছোট surprise effect হবে।
+     */
+
+    if(
+      event.target.closest &&
+      event.target.closest("#loveBtn")
+    ){
+
+      return;
+
+    }
+
+    confettiBurst();
+
+  }
+);
+
+</script>
+
+</body>
+</html>
